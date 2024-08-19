@@ -1,13 +1,15 @@
 import sys
-import re
 
 input = sys.stdin.readline
 exp = input().split('-')
-result = 0
+num = []
 
-for idx, e in enumerate(exp):
-    e = list(map(int, e.split('+')))
-    if idx == 0: result += sum(e)
-    else: result -= sum(e)
+for e in exp:
+    n = 0
+    e = e.split('+')
+    for i in e:
+        n += int(i)
+    num.append(n)
 
+result = num[0] * 2 - sum(num)
 print(result)
