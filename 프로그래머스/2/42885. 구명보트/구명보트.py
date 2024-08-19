@@ -1,8 +1,6 @@
-from collections import deque
-
 def solution(people, limit):
     cnt = 0
-    people = deque(sorted(people))
+    people.sort()
     i, j = 0, len(people) - 1
     
     while i < j:
