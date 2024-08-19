@@ -2,14 +2,11 @@ import sys
 
 input = sys.stdin.readline
 exp = input().split('-')
-num = []
+result = 0
 
-for e in exp:
-    n = 0
-    e = e.split('+')
-    for i in e:
-        n += int(i)
-    num.append(n)
+for idx, e in enumerate(exp):
+    e = list(map(int, e.split('+')))
+    if idx == 0: result += sum(e)
+    else: result -= sum(e)
 
-result = num[0] * 2 - sum(num)
 print(result)
