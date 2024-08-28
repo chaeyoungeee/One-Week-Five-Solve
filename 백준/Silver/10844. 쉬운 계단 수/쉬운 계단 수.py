@@ -15,4 +15,4 @@ for i in range(1, n):
         else:
             dp[i][j] = dp[i-1][j-1] + dp[i-1][j+1]
 
-print(sum(dp[-1]) % pow(10, 9))
+print(sum(dp[-1]) % 10 ** 9)
