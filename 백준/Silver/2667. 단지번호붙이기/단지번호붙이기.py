@@ -19,10 +19,10 @@ def bfs(i, j):
     queue = deque([(i, j)])
 
     while queue:
-        a, b = queue.popleft()
+        x, y = queue.popleft()
         for i in range(4):
-            nx = a + dx[i]
-            ny = b + dy[i]
+            nx = x + dx[i]
+            ny = y + dy[i]
             if nx < 0 or nx >= n or ny < 0 or ny >= n:
                 continue
             if graph[nx][ny] == 1:
