@@ -6,11 +6,9 @@ def convert_to_decimal(b, n):
         num += (b ** (len(n) - 1 - j)) * int(n[j])
     return num
 
-def convert_form_decimal(b, n):
+def convert_from_decimal(b, n):
     num = deque([])
     n = int(n)
-    if n == 0:
-        return "0"
     while b <= n: 
         r = n % b
         n //= b
@@ -59,7 +57,7 @@ def solution(expressions):
         for e in exp2:
             a = convert_to_decimal(ba, e[0])
             b = convert_to_decimal(ba, e[2])
-            e[4] = str(convert_form_decimal(ba, calculate(a, b, e[1])))
+            e[4] = str(convert_from_decimal(ba, calculate(a, b, e[1])))
             result.append(' '.join(e))
         return result
     else:
@@ -68,7 +66,7 @@ def solution(expressions):
             for ba in base:
                 a = convert_to_decimal(ba, e[0])
                 b = convert_to_decimal(ba, e[2])
-                c = str(convert_form_decimal(ba, calculate(a, b, e[1])))
+                c = str(convert_from_decimal(ba, calculate(a, b, e[1])))
                 print(ba,a,b,c)
                 if v == -1: v = c
                 else:
