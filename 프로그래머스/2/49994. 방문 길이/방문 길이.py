@@ -1,22 +1,17 @@
-def move(dir, x, y):
-    if dir == 'U': return x, y+1
-    if dir == 'D': return x, y-1
-    if dir == 'R': return x+1, y
-    if dir == 'L': return x-1, y
-    return x, y
-
 def solution(dirs):
     l = 0
     x, y = 5, 5
+    d = {'U': (0,1), 'D': (0, -1), 'R': (1, 0), 'L': (-1, 0)}
     dirs = list(dirs)
     ways = set()
     
     for dir in dirs:
-        dx, dy = move(dir, x, y)
-        if 0 <= dx < 11 and 0 <= dy < 11:
-            if ((x,y), (dx, dy)) not in ways:
+        dx, dy = d[dir]
+        nx, ny = x+dx, y+dy
+        if 0 <= nx < 11 and 0 <= ny < 11:
+            if (x,y, nx, ny) not in ways:
                 l += 1
-            ways.add(((x,y), (dx, dy)))
-            ways.add(((dx,dy), (x, y)))
-            x, y = dx, dy
+            ways.add((x,y, nx, ny))
+            ways.add((nx, ny, x, y))
+            x, y = nx, ny
     return l
