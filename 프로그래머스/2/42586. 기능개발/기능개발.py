@@ -15,5 +15,4 @@ def solution(progresses, speeds):
             count += 1
     
     answer.append(count)
-
     return answer
