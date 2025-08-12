@@ -6,9 +6,9 @@ def solution(orders, course):
     for c in course:
         menus = defaultdict(int)
         for order in orders:
+            order = sorted(order)
             combs = list(combinations(order, c))
             for comb in combs:
-                comb = sorted(comb)
                 menus["".join(comb)] += 1
         menus = sorted(menus.items(), key=lambda x: -x[1])
         
