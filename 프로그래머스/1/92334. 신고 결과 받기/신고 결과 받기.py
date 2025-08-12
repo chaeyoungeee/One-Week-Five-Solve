@@ -3,9 +3,8 @@ from collections import defaultdict
 def solution(id_list, report, k):
     count = defaultdict(int)
     reporter = defaultdict(set)
-    result = []
     
-    for r in report:
+    for r in set(report):
         p1, p2 = r.split() # 신고자, 피신고자
         reporter[p2].add(p1)
         
