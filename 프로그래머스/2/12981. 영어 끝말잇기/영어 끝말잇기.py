@@ -1,18 +1,21 @@
 def solution(n, words):
-    answer = [] 
-    ws = set()  
-    ws.add(words[0])  
+    round = 1
+    p = 1
+    w = {words[0]}
     
-    for k in range(1, len(words)):
-        i = (k % n) + 1 
-        j = (k // n) + 1  
+    for i in range(1, len(words)):
+        p = (i % n) + 1 # 번호
+        round = (i // n) + 1 # 차례
         
-        if words[k] in ws:
-            return [i, j] 
+        if words[i-1][-1] != words[i][0] or words[i] in w:
+            return [p, round]
         
-        if words[k][0] != words[k-1][-1]:
-            return [i, j] 
+        w.add(words[i])
         
-        ws.add(words[k])
-    
     return [0, 0]
+    
+    
+        
+        
+        
+        
