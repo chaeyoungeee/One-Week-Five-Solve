@@ -1,20 +1,13 @@
-from pprint import pprint
-
 def solution(n, wires):
     def dfs(x):
-        cnt = 1
         visited.add(x)
-        for i in tree[x]:
-            if i not in visited:
-                cnt += dfs(i)
-        return cnt
+        return sum([1] + [dfs(i) for i in tree[x] if i not in visited])
             
     result = n 
     tree = [[] for _ in range(n + 1)]
     
     for i in range(n-1):
         a, b = wires[i]
-        
         tree[a].append(b)
         tree[b].append(a)
         
