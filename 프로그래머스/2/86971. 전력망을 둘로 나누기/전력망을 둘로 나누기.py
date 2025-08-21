@@ -10,21 +10,19 @@ def solution(n, wires):
         return cnt
             
     result = n 
+    tree = [[] for _ in range(n + 1)]
+    
     for i in range(n-1):
-        tree = [[] for _ in range(n)]
-        visited = set()
-        e = (0, 0)
+        a, b = wires[i]
         
-        for j in range(n-1):
-            if i == j: 
-                e = wires[j]
-                continue
-            a, b = wires[j]
-            tree[a-1].append(b-1)
-            tree[b-1].append(a-1)
-            
-        cnt = dfs(e[1]-1)
-        result = min(result, abs(n-2*cnt))
+        tree[a].append(b)
+        tree[b].append(a)
+        
+    for i in range(n-1):
+        visited = set()
+        a, b = wires[i]
+        visited.add(b)
+        result = min(result, abs(n-2*dfs(a)))
         
     return result
             
