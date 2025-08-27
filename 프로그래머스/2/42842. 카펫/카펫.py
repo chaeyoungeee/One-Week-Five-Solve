@@ -1,10 +1,13 @@
 def solution(brown, yellow):
-    s = 0
-    for i in range(1, int(yellow**0.5)+1):
-        if yellow % i == 0:
-            y = yellow // i
-            b = (y + 2) * (i + 2) - yellow
-            if b == brown:
-                s = y
+    s = brown + yellow
+    answer = [0, 0]
+    
+    i = 3
+    while s:
+        if s % i == 0:
+            if 2*((s//i)+i-2) == brown: 
+                answer = [s // i, i]
                 break
-    return [s+2, yellow//s+2]
+        i += 1
+    
+    return answer
