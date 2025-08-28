@@ -1,10 +1,10 @@
 # [level 3] 정수 삼각형 - 43105 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43105) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43105?gad_source=1&gad_campaignid=22215033033&gbraid=0AAAAAC_c4nCHVYLX7SGvCvLafFYnkgK1W&gclid=Cj0KCQjw_L_FBhDmARIsAItqgt4A0BGjezEmrL9HxgNwIK4cYZjVtGvGj3n0rd65PidYxWnHlXSXMCQaAmOpEALw_wcB) 
 
 ### 성능 요약
 
-메모리: 14.3 MB, 시간: 34.83 ms
+메모리: 14.1 MB, 시간: 36.99 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 08월 28일 11:54:24
+2025년 08월 28일 16:19:16
 
 ### 문제 설명
 
