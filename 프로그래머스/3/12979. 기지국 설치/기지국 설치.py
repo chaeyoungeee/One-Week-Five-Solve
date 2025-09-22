@@ -10,9 +10,8 @@ def solution(n, stations, w):
             count += math.ceil((next - prev) / (w*2+1))
         prev = station + w + 1
 
+    n += 1
     if prev < n:
         count += math.ceil((n - prev) / (w*2+1))
-    if prev == n:
-        count += 1
     
     return count
