@@ -1,17 +1,10 @@
 import java.util.ArrayDeque;
+import java.util.Arrays;
 
 class Solution {
-    public ArrayDeque<String> getCards(String[] cards) {
-        ArrayDeque<String> dq = new ArrayDeque<>();
-        for (String c : cards) {
-            dq.addLast(c);
-        }
-        return dq;
-    }
-    
     public String solution(String[] cards1, String[] cards2, String[] goal) {
-        ArrayDeque<String> c1 = getCards(cards1);
-        ArrayDeque<String> c2 = getCards(cards2);
+        ArrayDeque<String> c1 = new ArrayDeque<>(Arrays.asList(cards1));
+        ArrayDeque<String> c2 = new ArrayDeque<>(Arrays.asList(cards2));
         
         for (String g : goal) {
             if (!c1.isEmpty() && c1.peekFirst().equals(g)) {
