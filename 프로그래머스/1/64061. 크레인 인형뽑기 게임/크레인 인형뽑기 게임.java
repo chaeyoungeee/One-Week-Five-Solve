@@ -11,11 +11,8 @@ class Solution {
                 int k = board[i][m-1];
                 if (k == 0) continue;
                 if (!stack.isEmpty() && k == stack.peek()) {
-                    count += 1;
-                    while (!stack.isEmpty() && k == stack.peek()) {
-                        stack.pop();
-                        count += 1;
-                    }
+                    stack.pop();
+                    count += 2;
                 } else {
                     stack.push(k);
                 }
